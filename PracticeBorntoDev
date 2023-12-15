@@ -1,0 +1,16 @@
+/*SELECT 
+	FirstName AS customer_firstname, 
+	LastName AS customer_lastname
+FROM customers;*/
+
+/*SELECT * FROM customers
+WHERE Country = 'Canada' OR Country = 'Norway'
+ORDER BY CustomerId DESC
+LIMIT 2;*/
+
+SELECT CustomerId,
+	FirstName,
+	LastName,
+	Address
+FROM customers
+WHERE CustomerId > 10;
