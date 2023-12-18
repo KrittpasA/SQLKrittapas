@@ -14,3 +14,30 @@ SELECT CustomerId,
 	Address
 FROM customers
 WHERE CustomerId > 10;
+//////////// ถ้าอยากนับ Count ////////////
+SELECT count (FirstName)
+FROM customers
+WHERE City = 'Berlin';
+////////////////////////////////////////
+
+
+
+/*INSERT INTO customers
+VALUES(60, 'Krittapas', 'Auwanitkun', 'Alstom', 'Tempo Quad', 'Bangkok', 'PP', //////////////////////////////////////// การ Insert ////////////////////////////////////
+'Thailand', 10220, 0980150397, NULL, 'krittapas.auwanitkun@gmail.com', 6);*/
+
+/*INSERT INTO customers(FirstName,LastName,Email)
+VALUES('Phantila', 'Raweewat', 'Phanthilaraweewat@gmail.com');*/
+
+/*UPDATE customers
+SET FirstName = 'Phantila',  //////////////////////////////////////// การ update ////////////////////////////////////
+	LastName = 'Auwanitkun'
+WHERE CustomerId = 61;*/
+
+////////////////////////////////////////// การนับ โดย Group By สิ่งที่อยากรู้ //////////////////////////////////////////////
+SELECT count(CustomerId), Country
+FROM customers
+GROUP by Country;
+//////////////////////////////////////////////////////////////////////////////////////
+
+
