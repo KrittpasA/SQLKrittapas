@@ -61,7 +61,7 @@ SELECT invoices.InvoiceId,  ### ตาราง.อยากหาโดยย�
 	customers.CustomerId, customers.FirstName, customers.LastName   ### ตาราง.อยากได้อะไร 
 FROM invoices                         ### เอาอะไรไป JOINT กับอะไร
 	INNER JOIN customers          ###
-	ON invoices.CustomerId = customers.CustomerId;   ### การนับ id ของตาราง invoices ไปเท่ากับ id ของตาราง customers
+	ON invoices.CustomerId = customers.CustomerId;   ### การนับ id ของตาราง invoices ไปเท่ากับ id ของตาราง customers ที่อยากรู้
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 SELECT invoices.InvoiceId, 
 	customers.CustomerId, 
@@ -72,4 +72,16 @@ LEFT JOIN customers
 ON invoices.CustomerId = customers.CustomerId
 ORDER BY InvoiceId;
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////// การ JOINT ใน TABLE เดียวกัน ### ต้องตั้งชื่อใหม่ให้อีกอัน ////////////
+SELECT employees.EmployeeId, 
+	employees.LastName,
+	employees.FirstName,
+	employees.ReportsTo,
+	employees2.LastName,
+	employees2.FirstName
+FROM employees
+INNER JOIN employees AS employees2
+ON employees.ReportsTo = employees2.EmployeeId; ##### อยากรู้ว่า report ต่อใคร
+/////////////////////////////////////////////////////////////////////
 
