@@ -58,7 +58,7 @@ GROUP By AlbumId;
 
 /////////////////////////////////////////////////////  การ INNER JOIN #### ONLY INTERSECTION ////////////////////////////////////
 SELECT invoices.InvoiceId,  ### ตาราง.อยากหาโดยยึด field อะไร 
-	customers.FirstName,LastName   ### ตาราง.อยากได้อะไร
+	customers.CustomerId, customers.FirstName, customers.LastName   ### ตาราง.อยากได้อะไร 
 FROM invoices                         ### เอาอะไรไป JOINT กับอะไร
 	INNER JOIN customers          ###
 	ON invoices.CustomerId = customers.CustomerId;   ### การนับ id ของตาราง invoices ไปเท่ากับ id ของตาราง customers
