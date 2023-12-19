@@ -63,3 +63,13 @@ FROM invoices                         ### เอาอะไรไป JOINT ก�
 	INNER JOIN customers          ###
 	ON invoices.CustomerId = customers.CustomerId;   ### การนับ id ของตาราง invoices ไปเท่ากับ id ของตาราง customers
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+SELECT invoices.InvoiceId, 
+	customers.CustomerId, 
+	customers.FirstName,
+	customers.LastName			################ LEFT JOIN
+FROM invoices 
+LEFT JOIN customers
+ON invoices.CustomerId = customers.CustomerId
+ORDER BY InvoiceId;
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
