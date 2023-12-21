@@ -85,3 +85,19 @@ INNER JOIN employees AS employees2
 ON employees.ReportsTo = employees2.EmployeeId; ##### อยากรู้ว่า report ต่อใคร
 /////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////// ตัวอย่าง หายอดขายสูงสุดของพนักงานแต่ละคน ///////////////////////////////////////////
+SELECT
+  *
+FROM 
+(
+  SELECT
+    agent_code,
+    ord_amount,
+    RANK() OVER(PARTITION BY agent_code ORDER BY ord_amount DESC) AS TOP  ########## ถ้าใช้เป็น ROW_NUMBER() จะได้เป็นแถวแทน 
+  FROM
+    `krittapasa-project.raw_data.orders`
+  ORDER BY
+    agent_code ASC
+)
+WHERE TOP <= 2;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
